@@ -31,7 +31,7 @@
 
 
 ## Running locally
-``` bash
+```bash
 docker run -d \
   --gpus all \
   -p 22:22 \
@@ -41,7 +41,7 @@ docker run -d \
 ```
 
 ## Building the docker image
-``` bash
+```bash
 git clone https://github.com/yuvraj108c/ComfyUI-Docker
 cd ComfyUI-Docker
 docker-compose build lite
