@@ -1,0 +1,41 @@
+ARG BASE_IMAGE
+FROM ${BASE_IMAGE}
+
+ENV DEBIAN_FRONTEND=noninteractive \
+    PYTHONUNBUFFERED=1 \
+    NVIDIA_VISIBLE_DEVICES=all \
+    NVIDIA_DRIVER_CAPABILITIES=all
+
+ARG WORKDIR
+WORKDIR ${WORKDIR}
+
+RUN apt update -y && apt install git aria2 -y
+
+ARG COMFYUI_SHA
+RUN git clone https://github.com/comfyanonymous/ComfyUI
+
+WORKDIR ${WORKDIR}/ComfyUI
+
+RUN git checkout ${COMFYUI_SHA}
+RUN python -m venv venv
+
+ARG PYTORCH_VERSION
+RUN --mount=type=cache,target=/root/.cache/pip \
+    pip install torch==${PYTORCH_VERSION} torchsde torchvision einops transformers>=4.25.1 safetensors>=0.3.0 aiohttp pyyaml Pillow scipy tqdm psutil kornia>=0.7.1 jupyterlab
+
+RUN --mount=type=cache,target=/root/.cache/pip \
+    git -C ./custom_nodes clone https://github.com/ltdrdata/ComfyUI-Manager.git && \
+    cd custom_nodes/ComfyUI-Manager && pip install -r requirements.txt
+
+RUN aria2c --console-log-level=error -c -x 16 -s 16 -k 1M "https://huggingface.co/jzli/DreamShaper-8/resolve/main/dreamshaper_8.safetensors" -d "models/checkpoints" -o "dreamshaper_8.safetensors"
+
+RUN apt install ffmpeg -y
+
+# ssh server
+COPY scripts/setup-ssh.sh /usr/local/bin/
+RUN chmod +x /usr/local/bin/setup-ssh.sh
+RUN /usr/local/bin/setup-ssh.sh
+
+COPY scripts/start.sh .
+RUN chmod +x ./start.sh
+CMD ["./start.sh"]
