@@ -35,6 +35,6 @@ COPY scripts/setup-ssh.sh /usr/local/bin/
 RUN chmod +x /usr/local/bin/setup-ssh.sh
 RUN /usr/local/bin/setup-ssh.sh
 
-COPY scripts/start.sh .
+COPY scripts/start.sh ${WORKDIR}/ComfyUI
 RUN chmod +x ./start.sh
 CMD ["./start.sh"]
