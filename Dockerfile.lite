@@ -31,10 +31,11 @@ RUN aria2c --console-log-level=error -c -x 16 -s 16 -k 1M "https://huggingface.c
 RUN apt install ffmpeg -y
 
 # ssh server
-COPY scripts/setup-ssh.sh /usr/local/bin/
-RUN chmod +x /usr/local/bin/setup-ssh.sh
-RUN /usr/local/bin/setup-ssh.sh
+COPY scripts/* .
 
-COPY scripts/start.sh ${WORKDIR}/ComfyUI
+RUN chmod +x ./setup-ssh.sh
 RUN chmod +x ./start.sh
+
+RUN ./setup-ssh.sh
+
 CMD ["./start.sh"]

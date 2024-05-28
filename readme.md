@@ -25,9 +25,13 @@
 
 ## Environment Variables
 
-| Variable     | Description                 |
-| ------------ | --------------------------- |
-| SSH_PASSWORD | Set password for ssh access |
+Each of the following environment variable is optional, set either `SSH_PASSWORD` or `PUBLIC_KEY` for ssh access
+
+| Variable     | Description               |
+| ------------ | ------------------------- |
+| SSH_PASSWORD | Password for ssh access   |
+| PUBLIC_KEY   | Public Key for ssh access |
+| SSH_USER     | Username for ssh access   |
 
 
 ## Running locally
@@ -46,3 +50,6 @@ git clone https://github.com/yuvraj108c/ComfyUI-Docker
 cd ComfyUI-Docker
 docker-compose build lite
 ```
+
+## License
+MIT
