@@ -27,11 +27,11 @@
 
 Each of the following environment variable is optional, set either `SSH_PASSWORD` or `PUBLIC_KEY` for ssh access
 
-| Variable     | Description               |
-| ------------ | ------------------------- |
-| SSH_PASSWORD | Password for ssh access   |
-| PUBLIC_KEY   | Public Key for ssh access |
-| SSH_USER     | Username for ssh access   |
+| Variable     | Description                             |
+| ------------ | --------------------------------------- |
+| SSH_PASSWORD | Password for ssh access                 |
+| PUBLIC_KEY   | Public Key for ssh access               |
+| SSH_USER     | Username for ssh access (default: root) |
 
 
 ## Running locally
