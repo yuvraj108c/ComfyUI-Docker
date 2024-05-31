@@ -12,7 +12,7 @@
 ## Tags
 | Tag    | Description                                                                                   | Size      |
 | ------ | --------------------------------------------------------------------------------------------- | --------- |
-| lite   | ComfyUI + Manager, Jupyter, 1 Lab, 1 sd15 model                                               | ~ 8.3 GB  |
+| lite   | ComfyUI + Manager, Jupyter Lab, 1 sd1.5 model                                                 | ~ 8.3 GB  |
 | latest | ComfyUI + Manager, Jupyter Lab, custom nodes, models for controlnets, ipadpapter, animatediff | ~ 32.5 GB |
 
 
@@ -31,33 +31,33 @@
 
 ## Models
 ### Checkpoints
-- [DreamShaper-8](https://huggingface.co/jzli/DreamShaper-8)
-- [stable-diffusion-xl-base-1.0](https://huggingface.co/stabilityai/stable-diffusion-xl-base-1.0)
+- [DreamShaper-8](https://huggingface.co/jzli/DreamShaper-8/tree/main)
+- [stable-diffusion-xl-base-1.0](https://huggingface.co/stabilityai/stable-diffusion-xl-base-1.0/tree/main)
 
 ### Vae
-- [vae-ft-mse-840000-ema-pruned](https://huggingface.co/stabilityai/sd-vae-ft-mse-original/resolve/main/vae-ft-mse-840000-ema-pruned.ckpt)
+- [vae-ft-mse-840000-ema-pruned](https://huggingface.co/stabilityai/sd-vae-ft-mse-original/tree/main)
 
 ### Loras
-- [lcm_sd15](https://huggingface.co/latent-consistency/lcm-lora-sdv1-5/resolve/main/pytorch_lora_weights.safetensors)
+- [lcm_sd15](https://huggingface.co/latent-consistency/lcm-lora-sdv1-5/tree/main)
 
 ### Controlnets
-- [control_v11p_sd15_openpose](https://huggingface.co/lllyasviel/ControlNet-v1-1/resolve/main/control_v11p_sd15_openpose.pth)
-- [control_v11f1p_sd15_depth](https://huggingface.co/lllyasviel/ControlNet-v1-1/resolve/main/control_v11f1p_sd15_depth.pth)
-- [control_v11p_sd15_lineart](https://huggingface.co/lllyasviel/ControlNet-v1-1/resolve/main/control_v11p_sd15_lineart.pth)
+- [control_v11p_sd15_openpose](https://huggingface.co/lllyasviel/ControlNet-v1-1/tree/main)
+- [control_v11f1p_sd15_depth](https://huggingface.co/lllyasviel/ControlNet-v1-1/tree/main)
+- [control_v11p_sd15_lineart](https://huggingface.co/lllyasviel/ControlNet-v1-1/tree/main)
 
 
 ### AnimateDiff
-- [AnimateLCM_sd15_t2v](https://huggingface.co/wangfuyun/AnimateLCM/resolve/main/AnimateLCM_sd15_t2v.ckpt)
-- [v3_sd15_mm](https://huggingface.co/guoyww/animatediff/resolve/main/v3_sd15_mm.ckpt)
+- [AnimateLCM_sd15_t2v](https://huggingface.co/wangfuyun/AnimateLCM/tree/main)
+- [v3_sd15_mm](https://huggingface.co/guoyww/animatediff/tree/main)
 
 
 ### Clip Vision
-- [CLIP-ViT-H-14-laion2B-s32B-b79K](https://huggingface.co/h94/IP-Adapter/resolve/main/models/image_encoder/model.safetensors)
-- [CLIP-ViT-bigG-14-laion2B-39B-b160k](https://huggingface.co/h94/IP-Adapter/resolve/main/sdxl_models/image_encoder/model.safetensors)
+- [CLIP-ViT-H-14-laion2B-s32B-b79K](https://huggingface.co/h94/IP-Adapter/tree/main/models/image_encoder)
+- [CLIP-ViT-bigG-14-laion2B-39B-b160k](https://huggingface.co/h94/IP-Adapter/tree/main/sdxl_models/image_encoder)
 
 ### Ipadapter
-- [ip-adapter-plus_sd15](https://huggingface.co/h94/IP-Adapter/resolve/main/models/ip-adapter-plus_sd15.safetensors)
-- [ip-adapter-plus_sdxl_vit-h](https://huggingface.co/h94/IP-Adapter/resolve/main/sdxl_models/ip-adapter-plus_sdxl_vit-h.safetensors)
+- [ip-adapter-plus_sd15](https://huggingface.co/h94/IP-Adapter/tree/main/models)
+- [ip-adapter-plus_sdxl_vit-h](https://huggingface.co/h94/IP-Adapter/tree/main/sdxl_models)
 
 
 
