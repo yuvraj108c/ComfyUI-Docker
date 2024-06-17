@@ -50,3 +50,28 @@ services:
       - 22:22 # ssh
       - 8188:8188 # comfyui
       - 8888:8888 # jupyter server
+
+  latitude-lite:
+    platform: linux/amd64
+    build:
+      context: .
+      dockerfile: Dockerfile.latitude-lite
+      args:
+        BASE_IMAGE: python:3.12-slim
+        COMFYUI_SHA: 8508df25691b0c9213049ab0d723610d3d8f9136
+        PYTORCH_VERSION: 2.3.0
+    image: yuvraj108c/comfyui:latitude-lite
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [ gpu ]
+    ports:
+      - 22:22 # ssh
+      - 8188:8188 # comfyui
+      - 8888:8888 # jupyter server
+    # command: /bin/bash
+    # tty: true
+    # stdin_open: true
