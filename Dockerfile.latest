@@ -102,4 +102,4 @@ RUN chmod +x ./start.sh
 
 RUN ./setup-ssh.sh
 
-CMD ["./start.sh"]
+CMD ["/workspace/ComfyUI/start.sh"]
