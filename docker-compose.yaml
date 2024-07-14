@@ -9,7 +9,7 @@ services:
       args:
         BASE_IMAGE: python:3.12-slim
         COMFYUI_SHA: 79547efb65ebb41a964ce7686170c4e6c3641eb2
-        PYTORCH_VERSION: 2.3.0
+        PYTORCH_VERSION: 2.3.1
         WORKDIR: /workspace
     image: yuvraj108c/comfyui:lite
     deploy:
@@ -32,7 +32,7 @@ services:
       args:
         BASE_IMAGE: python:3.12-slim
         COMFYUI_SHA: 79547efb65ebb41a964ce7686170c4e6c3641eb2
-        PYTORCH_VERSION: 2.3.0
+        PYTORCH_VERSION: 2.3.1
         WORKDIR: /workspace
     image: yuvraj108c/comfyui:latest
     deploy:

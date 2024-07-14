@@ -20,7 +20,8 @@ RUN git checkout ${COMFYUI_SHA}
 
 ARG PYTORCH_VERSION
 RUN --mount=type=cache,target=/root/.cache/pip \
-    pip install torch==${PYTORCH_VERSION} torchsde torchvision einops transformers>=4.25.1 safetensors>=0.3.0 aiohttp pyyaml Pillow scipy tqdm psutil kornia>=0.7.1 jupyterlab
+    pip install torch==${PYTORCH_VERSION} jupyterlab && \
+    pip install -r requirements.txt
 
 RUN --mount=type=cache,target=/root/.cache/pip \
     git -C ./custom_nodes clone https://github.com/ltdrdata/ComfyUI-Manager.git && \
