@@ -1,5 +1,3 @@
-version: "3.8"
-
 services:
   lite:
     platform: linux/amd64
@@ -75,3 +73,29 @@ services:
     # command: /bin/bash
     # tty: true
     # stdin_open: true
+
+  ultra:
+    platform: linux/amd64
+    build:
+      context: .
+      dockerfile: Dockerfile.ultra
+      args:
+        COMFYUI_SHA: 7183fd1665e88c13184a11d7ec06f56307b4fa7f
+        PYTORCH_VERSION: 2.4.1
+        CIVITAI_TOKEN: 
+
+    image: yuvraj108c/comfyui:ultra
+    # deploy:
+    #   resources:
+    #     reservations:
+    #       devices:
+    #         - driver: nvidia
+    #           count: all
+    #           capabilities: [ gpu ]
+    ports:
+      - 22:22 # ssh
+      - 8188:8188 # comfyui
+      - 8888:8888 # jupyter server
+    command: /bin/bash
+    tty: true
+    stdin_open: true
