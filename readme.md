@@ -13,8 +13,8 @@
 | Tag    | Description                                                                                   | Size      |
 | ------ | --------------------------------------------------------------------------------------------- | --------- |
 | lite   | ComfyUI + Manager, Jupyter Lab, 1 sd1.5 model                                                 | ~ 8.3 GB  |
-| latest | ComfyUI + Manager, Jupyter Lab, custom nodes, models for controlnets, ipadpapter, animatediff | ~ 89.3 GB |
-| ultra |  More models/custom nodes | ~ 100.5 GB |
+| latest | ComfyUI + Manager, Jupyter Lab, custom nodes, models for controlnets, ipadpapter, animatediff | ~ 32.5 GB |
+| ultra |  More models/custom nodes, flux, instantid, facerestore etc | ~ 89.3 GB |
 
 
 ## Custom Nodes
